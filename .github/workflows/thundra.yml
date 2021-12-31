@@ -21,4 +21,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-result-junit
-          path: /build/test-results/**
+          path: /build/test-results
