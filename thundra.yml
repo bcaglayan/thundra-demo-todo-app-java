@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Project Checkout
+        uses: actions/checkout@v2.4.0
+
+      - run: ./gradlew clean test --rerun-tasks --stacktrace
+      
+      - name: Archive test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-result-junit
+          path: /build/test-results/test
