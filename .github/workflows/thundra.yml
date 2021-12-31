@@ -18,6 +18,8 @@ jobs:
       - run: ./gradlew clean test --rerun-tasks --stacktrace
       
       - run: ls * 
+      - run: ls * build/test-results
+      - run: ls * build/test-results/test
       
       - name: Archive test results
         uses: actions/upload-artifact@v2
