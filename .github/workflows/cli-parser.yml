@@ -28,8 +28,8 @@ jobs:
         
       - name: cli upload reports
         env:
-          # NODE_TLS_REJECT_UNAUTHORIZED: 0
           THUNDRA_APIKEY: ${{ secrets.THUNDRA_APIKEY }}
           THUNDRA_AGENT_TEST_PROJECT_ID: ${{ secrets.THUNDRA_AGENT_TEST_PROJECT_ID }}
           THUNDRA_UPLOADER_SIGNER_URL: ${{ secrets.THUNDRA_S3_SIGNER_URL }}
+          THUNDRA_UPLOADER_LOG_LEVEL: debug
         run: thundra upload -ud ./build/test-results/test --type=TEST -f JUNIT
