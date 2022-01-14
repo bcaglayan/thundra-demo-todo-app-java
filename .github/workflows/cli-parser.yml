@@ -24,7 +24,7 @@ jobs:
       - run: npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
       
       - name: install cli
-        run: npm install -g @thundra/foresight-cli@1.0.11
+        run: npm install -g @thundra/foresight-cli@1.0.12
 
       - name: cli upload reports
         env:
