@@ -24,11 +24,11 @@ jobs:
       - run: npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
       
       - name: install cli
-        run: npm install -g @thundra/foresight-cli@0.0.2
+        run: npm install -g @thundra/foresight-cli@0.0.3
 
       - name: cli upload reports
         env:
-          THUNDRA_UPLOADER_LOG_LEVEL: debug
+          THUNDRA_FORESIGHT_LOG_LEVEL: debug
           THUNDRA_APIKEY: ${{ secrets.THUNDRA_APIKEY }}
           THUNDRA_FORESIGHT_PROJECT_ID: ${{ secrets.THUNDRA_AGENT_TEST_PROJECT_ID }}
           THUNDRA_UPLOADER_SIGNER_URL: ${{ secrets.THUNDRA_S3_SIGNER_URL }}
